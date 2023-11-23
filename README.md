@@ -8,6 +8,34 @@ This project consists of a Python-based web scraper (`ContestScraper`) for progr
 - **Contest Scraper**: Scrape programming contest information from multiple platforms and save it in JSON format.
 - **Flask API**: Serve the scraped contest data through a RESTful API.
 
+## API Schema
+
+The Flask API provides the following endpoint:
+
+- `GET /contests/<platform>`: Retrieve contest data for a specific platform.
+
+The response is a JSON object with the following structure:
+
+```json
+{
+  "contests": [
+    {
+      "name": "Contest Name",
+      "url": "Contest URL",
+      "start_time": "Start Time in ISO 8601 Format",
+      "end_time": "End Time in ISO 8601 Format",
+      "duration": "Duration in human-readable format (e.g., 3 hours, 30 minutes)",
+      "type": "Type of the contest",
+      "in_24_hours": "Yes or No, indicating if the contest starts within 24 hours",
+      "status": "Current status (e.g., 'CODING', 'BEFORE')"
+    },
+    ...
+  ]
+}
+```
+
+Replace `<platform>` in the endpoint with the desired platform name (e.g., `codeforces`, `hackerrank`).
+
 ## Getting Started
 
 ### Prerequisites
