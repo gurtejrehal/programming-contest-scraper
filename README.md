@@ -36,7 +36,7 @@ This project consists of a Python-based web scraper (`ContestScraper`) for progr
 1. Run the scraper to collect contest data:
 
    ```sh
-   python scrape.py
+   python contest_scraper.py
    ```
 
    This will scrape the contest data and save it in the `output` directory.
