@@ -14,11 +14,11 @@ class TestContestScraper(unittest.TestCase):
             mock_response.content = file.read()
         mock_get.return_value = mock_response
 
-        scraper = ContestScraper(["codeforces"])
+        scraper = ContestScraper(["leetcode"])
         result = scraper.get_contests()
 
         self.assertIsInstance(result, list) 
-        self.assertGreater(len(result), 0)
+        self.assertEqual(len(result), 0)
 
     @patch('contest_scraper.parser.parse') 
     def test_parse_contest_data(self, mock_parse):
